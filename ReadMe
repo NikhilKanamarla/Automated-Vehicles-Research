@@ -11,11 +11,6 @@ Second Sprint
 Integrate the Amazon Echo into the UD Smart City Autonomous cars and Autonomous Drones (if possible) through mainframe Linux Computer 
 Overall: get car to drive to a location via Alexa skill
 
-Third and Fourth Sprint 
-Authnomous Merging for roundabouts project for IEEE
-Refer to Path.py, NKroundabout.py (main class used), Merge_builder.cpp, LF_merge.cpp and MergeBuilder.H, skill_server2.py, test2_skill.json
-Reliable and realistic dynamic roundabout merging integrated with Alexa skill
-
 
 
 Optional 
