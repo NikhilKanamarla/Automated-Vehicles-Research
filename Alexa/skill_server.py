@@ -11,20 +11,6 @@ import sys
 import os
 sys.path.insert(0,'/home/themainframe/catkin_ws/src/line_following/script')
 
-#from script.nkMergeSim import nkMergeSim
-#from nkMergeSim import watchout
-#sys.path.append(os.path.abspath('/home/themainframe/catkin_ws/src/line_following/script/nkMergeSim.py'))
-#if __name__ == '__main__' and __package__ is None:
- #   from os import sys, path
-  #  sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
-#import ../home/themainframe/catkin_ws/src/line_following/script/nkMergeSim
-#dirname = os.path.dirname(__file__)
-#filename = os.path.join(dirname,"/home/themainframe/catkin_ws/src/line_following/script/nkMergeSim.py")
-#sys.path.append(path.dirname(path.dirname(path.abspath(__file__), '..')))
-#from ...nkMergeSim import watchout 
- #/home/themainframe/catkin_ws/src/line_following/script
-#from .themainframe.catkin_ws.src.line_following.script.Points import Buildpath
-#from catkin_ws.src.line_following.script.nkMergeSim import nkMergeSim
 
 #creating the flask asp
 app = Flask(__name__)
