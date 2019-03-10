@@ -1,0 +1,77 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "ud smart city",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "carIntent",
+                    "slots": [
+                        {
+                            "name": "coffeeShop",
+                            "type": "AMAZON.Food",
+                            "samples": [
+                                "coffee shop"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "I want coffee",
+                        "say {coffeeShop}"
+                    ]
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "carIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "coffeeShop",
+                            "type": "AMAZON.Food",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1433267023109.40670936270"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.1433267023109.40670936270",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "where do you want to go"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.427272116236.659420533766",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "are you sure?"
+                    }
+                ]
+            }
+        ]
+    }

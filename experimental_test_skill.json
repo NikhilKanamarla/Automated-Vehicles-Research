@@ -1,0 +1,139 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "ud smart city",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "DroneIntent",
+                    "slots": [
+                        {
+                            "name": "coffeeShopDrone",
+                            "type": "AMAZON.FoodEstablishment",
+                            "samples": [
+                                "I want coffee",
+                                "Send the drone to the coffee shop"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "fly the drone"
+                    ]
+                },
+                {
+                    "name": "CarIntent",
+                    "slots": [
+                        {
+                            "name": "coffeeShopCar",
+                            "type": "AMAZON.LocalBusiness",
+                            "samples": [
+                                "Drive the car to the coffee shop",
+                                "Coffee Shop"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "Drive the car"
+                    ]
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "DroneIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "coffeeShopDrone",
+                            "type": "AMAZON.FoodEstablishment",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.158305156687.907901213019",
+                                "elicitation": "Elicit.Slot.158305156687.907901213019"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "CarIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "coffeeShopCar",
+                            "type": "AMAZON.LocalBusiness",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.1130971732947.1441811220779",
+                                "elicitation": "Elicit.Slot.1501800276600.1446741809611"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.158305156687.310166729824",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "coffee"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.158305156687.907901213019",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Where do you want to send the drone?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.158305156687.907901213019",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Are you sure you want to go to this location?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1130971732947.1441811220779",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Are you sure you want to go to this location?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1501800276600.1446741809611",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Where do you want to send the car?"
+                    }
+                ]
+            }
+        ]
+    }
+}
