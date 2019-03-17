@@ -32,11 +32,13 @@ Delta is the “safety stance”
 BaselineMerging.py
 Initial Positions of vehicles
 Creates array inMerge and int numRobots for use in checkMerge
-checkMerge
+
+CheckMerge
 Takes index (vehicle number), status (path.GetSegmentID) and position
 Checks whether each vehicle is in a certain predefined lx and y range to stop, and then if it is, inMerge[index] will become 1
 Returns inMerge whereever called
-zumoThread
+
+ZumoThread
 This is what is initialized at the end of the file, and we have multiple running at the same time, one per vehicle
 Initialization: sets x and y from posx and posy, sets road speed limit, also records time that program is run in cur_t
 while(isRun)
@@ -47,7 +49,7 @@ resp is a ros object which creates a usable vector of x and y and each vehicles 
 After resp is made, inMerge runs checkmerge to see whos in the merging zone by checking something from res?
 Control Logic/Final Conditionals
 If the car is on a certain segment, or in a certain x y range, and there are others inWaiting, set the speed to zero and wait 
-CONCLUSION: SPEED IS SET TO ZERO BASED ON IN WAITING, AND RESET TO ROAD SPEED BASED ON (“not np.sum(inMerge)>0) aka if there is anyone else in the merge
+Conlcusion: Speed is set to zero based on inWaiting, and it resets it's road speed based on (“not np.sum(inMerge)>0 if there is anyone else in the merge zone
 time.sleep(controlRate) determines how often this code updates speeds, by suspending execution for controlRate # of seconds
 
 DynamicMerging.py
