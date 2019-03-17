@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-#NKroundabout
 #todo: implement Vicon tracking system
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
