@@ -10,20 +10,17 @@ In path files, we create Control zones for each path using the “AppendControlB
 #eid id of groups which are entering to the cz(Control type)
 # if we have two action types in a same segment, it should be writen in order ex.-> 2 1 0
 position of xhalfplane (place where merging happens),postion ofyhalfplane,true if you want > x half plane value,true if you want > y half plane value)
-Has an array for segments and an index=0
+An array for segments and an index = 0
 AppendSegment adds a segment to the segments array
-GetSegmentID(x,y) returns -1 if the path is empty (segments has a length of 0) or 
-GetDefaultPath(index)
-res= Path()
+GetSegmentID(x,y) returns -1 if the path is empty (segments has a length of 0) or GetDefaultPath(index) res= Path()
 If index = 0 {some path is created using appendsegment}
 
 Mergebuilder.cpp
 This file creates segments of control zones, by making an instance of a ControlZone class that can be used in LF_merge
-To make our own Roundabouts ControlZone, we can just copy one of the previous ones in MergeBuilder and make adjustments as needed. 
 Create new control zone type ControlZone* z4 = new ControlZone(0);
 
 LF_Merge.cpp 
-Beware of const double RESET_TH =2.9 (if the time the car has to reach the merge is less than RESET_TH time, then it must travel too fast so the queue is reset. If we have a different CZ length, we must verify that this value is still optimal and fits the simulation)
+Const double RESET_TH =2.9 (if the time the car has to reach the merge is less than RESET_TH time, then it must travel too fast so the queue is reset. If we have a different CZ length, we must verify that this value is still optimal and fits the simulation)
 LF_Merge “activates” merging zones from MergeBuilder classes, and uses MergeBuilder’s .BuildMerge() function. 
 L is the length of the control zone in meters
 S is the length of the merging zone in meters
