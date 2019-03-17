@@ -32,12 +32,10 @@ Delta is the “safety stance”
 BaselineMerging.py
 Initial Positions of vehicles
 Creates array inMerge and int numRobots for use in checkMerge
-
 CheckMerge
 Takes index (vehicle number), status (path.GetSegmentID) and position
 Checks whether each vehicle is in a certain predefined lx and y range to stop, and then if it is, inMerge[index] will become 1
 Returns inMerge whereever called
-
 ZumoThread
 This is what is initialized at the end of the file, and we have multiple running at the same time, one per vehicle
 Initialization: sets x and y from posx and posy, sets road speed limit, also records time that program is run in cur_t
@@ -58,6 +56,11 @@ They dynamically merge into the eastern roundabout on the UD scaled city. So thi
 The central way the algorithm works is by defining a control zone where vehicles adjust their velocity to accommodate each other by minimizing acceleration and deceleration and maintaining a safety distance. 
 The merging zone where the cars actually merge into the roundabout and they move at a constant velocity. 
 My software is structured to have two "paths", one going around the roundabout and another path that takes the cars from one roundabout to another and back.
+Intial Postions and indexes for the cars 
+Talker and RT_Control are for the VICON and ROS frameworks and they allow the cars to communicate with each other and the sensors
+Animate creates a simulation for testing the software 
+ZumoThread contains the control logic from the paper 
+The threads at the bottom contain the paths for the cars 
 
 
 other files are just dependencies 
