@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-# Two unfied paths and control zones art the same dimensions and ignore the y -axis
-# bloody path
 import math
 
 class Zone:
