@@ -1,6 +1,6 @@
 #include "Merge_builder.h"
 #include "Control_zone.h"
-#NKMergeBuilder
+
 #include <queue>
 #include <ctime>
 #include <tuple>
