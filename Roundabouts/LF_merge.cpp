@@ -1,6 +1,5 @@
 #include "ros/ros.h"
 #include "std_msgs/String.h"
-#LF bloody merge
 #include "line_following/MergeControl.h"
 #include "Merge_builder.h"
 #include "Control_zone.h"
