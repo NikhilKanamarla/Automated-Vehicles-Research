@@ -1,0 +1,39 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/themainframe/catkin_ws/devel/include",
+                "/opt/ros/kinetic/include",
+                "/home/themainframe/catkin_ws/src/chuchu_flows/include",
+                "/home/themainframe/catkin_ws/src/crazyflie_ros/crazyflie_cpp/include",
+                "/home/themainframe/catkin_ws/src/hector_quadrotor/hector_quadrotor_actions/include",
+                "/home/themainframe/catkin_ws/src/hector_quadrotor/hector_quadrotor_controller_gazebo/include",
+                "/home/themainframe/catkin_ws/src/hector_quadrotor/hector_quadrotor_gazebo_plugins/include",
+                "/home/themainframe/catkin_ws/src/hector_quadrotor/hector_quadrotor_interface/include",
+                "/home/themainframe/catkin_ws/src/hector_quadrotor/hector_quadrotor_model/include",
+                "/home/themainframe/catkin_ws/src/hector_quadrotor/hector_quadrotor_pose_estimation/include",
+                "/home/themainframe/catkin_ws/src/hector_quadrotor/hector_uav_msgs/include",
+                "/home/themainframe/catkin_ws/src/mavros/libmavconn/include",
+                "/home/themainframe/catkin_ws/src/line_following/include",
+                "/home/themainframe/catkin_ws/src/mav_comm/mav_msgs/include",
+                "/home/themainframe/catkin_ws/src/mav_comm/mav_planning_msgs/include",
+                "/home/themainframe/catkin_ws/src/mavros/mavros/include",
+                "/home/themainframe/catkin_ws/src/mavros/mavros_msgs/include",
+                "/home/themainframe/catkin_ws/src/rl_drones/include",
+                "/home/themainframe/catkin_ws/src/rotors_simulator/rotors_control/include",
+                "/home/themainframe/catkin_ws/src/rotors_simulator/rotors_gazebo_plugins/include",
+                "/home/themainframe/catkin_ws/src/rotors_simulator/rotors_joy_interface/include",
+                "/home/themainframe/catkin_ws/src/mavros/test_mavros/include",
+                "/home/themainframe/catkin_ws/src/using_markers/include",
+                "/usr/include"
+            ],
+            "name": "Linux",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}

@@ -1,0 +1,11 @@
+{
+    "C_Cpp.dimInactiveRegions": false,
+    "python.autoComplete.extraPaths": [
+        "/home/themainframe/catkin_ws/devel/lib/python2.7/dist-packages",
+        "/opt/ros/kinetic/lib/python2.7/dist-packages",
+        "/home/themainframe/flow",
+        "/home/themainframe/sumo/tools",
+        "/home/themainframe/flow",
+        "/home/themainframe/sumo/tools"
+    ]
+}
