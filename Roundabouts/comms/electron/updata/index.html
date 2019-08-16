@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Mini City Application</title>
+
+
+    <script type="text/javascript" src="js/jquery-1.3.2-vsdoc2.js"></script>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="node_modules/smalltalk/dist/smalltalk.min.css">
+
+  </head>
+
+  <body background="image/background.jpg">
+
+    
+    <div class="container">
+    	<table cellpadding="10" align="center"> 
+        	<tr>
+        		<td colspan="2">
+
+             		<h1 style="text-align:center">
+       				 	Mini-city robots Server
+					</h1>
+
+				</td>
+        	</tr>
+        	<tr id="start_button">
+        		<td  style="cursor:pointer" id = "Start" align="center" class="start" rowspan="2">
+        				
+        						START
+        		</td>
+  
+			</tr>
+			<tr id = "merge_botton">
+
+			</tr>
+        </table>
+        
+
+        <p>&nbsp;</p>
+
+        
+        <div class="row flat">
+            
+            <div class="col-lg-3 col-md-3 col-xs-6">
+                <ul class="plan robot1">
+                    
+                    <li class="plan-name">
+                        Robot 01
+
+                   		<img align="right" id = "battery_icon01" src= "image/battery84.png" style="max-width:27px;" /> 
+                    	<!--
+                    	<font id = "battery_lev01" size="2" color="black" style="font-weight:bold;font-style:italic;"></font> 
+                    	
+                    	-->              
+                    </li>
+                    <div id = "conntag01" class="Disconnect">
+                        Disconnect  
+                        </div> 
+                    <script type="text/javascript" src = connected.js>
+                    </script>            
+                </ul>
+            </div>
+        
+       		 <div  id = "parent" class="col-lg-3 col-md-3 col-xs-6">
+        		<ul  class="plan robot1">
+        			<li class="add">
+        				<img id = "minus_icon" src= "image/minus.png" style="max-width:65px;" /> 
+        				<img id = "add_icon" src= "image/add.png" style="max-width:65px;" />
+        				<img id = "more" src= "image/more.png" style="max-width:30px;" /> 
+        			</li>
+        		</ul>
+        	</div>
+
+        	
+        	<script type="text/javascript">
+        		
+        		const { spawn }= require('child_process');
+        		const smalltalk = require('smalltalk')
+        		
+        		
+        		var int_num = 1;
+        		var num = "01"
+        		
+
+        		function plus(){
+        			int_num = int_num+1;
+  					if(int_num<10){
+  						num = "0"+int_num.toString();
+  					}else{
+  						num = int_num.toString();
+  					}
+
+  					  var main_ = document.createElement('div');
+   		    		var ul_ = document.createElement('ul');
+   		    		var li_name = document.createElement('li');
+   		    		var img_batt = document.createElement('img');
+   		    		var div_conn = document.createElement('div');
+
+   		    		main_.className = "col-lg-3 col-md-3 col-xs-6";
+   		    		main_.id = "main_"+num;
+   		    		ul_.className = "plan robot1";
+   		    	
+   		    		li_name.className = "plan-name";
+   		    		li_name.innerHTML = "robot "+num;
+   		    	
+   		    		img_batt.align = "right";
+   		    		img_batt.id = "battery_icon"+num;
+   		    		img_batt.src = "image/battery84.png";
+   		    		img_batt.style.width = "27px";
+
+   		    		div_conn.className = "Disconnect";
+   		    		div_conn.id = "conntag"+num;
+   		    		div_conn.innerHTML = "Disconnect";
+
+
+    				li_name.appendChild(img_batt);
+    				ul_.appendChild(li_name);
+    				ul_.appendChild(div_conn);
+    				main_.appendChild(ul_);
+
+    				var parent_node = document.getElementById("parent");
+   	 				parent_node.parentNode.insertBefore(main_ , parent_node);
+        		}
+				
+				function substract(){
+					var child=document.getElementById("main_"+num);
+
+					child.parentNode.removeChild(child);
+					int_num = int_num - 1;
+					
+					if(int_num<10){
+  						num = "0"+int_num.toString();
+  					}else{
+  						num = int_num.toString();
+  					}
+			
+				}
+				document.getElementById("add_icon").onclick=function(){
+						plus();
+				}
+
+				document.getElementById("minus_icon").onclick=function(){
+						substract();
+				}
+
+				document.getElementById("more").onclick=function(){
+					var temp = 0;
+					smalltalk
+					    .prompt('input need', 'How many nodes do you want?', '')
+					    .then((value) => {
+								if (int_num < value){
+									temp = value-int_num;
+									for(i = 0; i < temp; i++){
+										plus();
+									}
+								}else{
+									temp = int_num - value;
+									for(i = 0; i < temp; i++){
+										substract();
+									}
+									
+								}	
+							
+					    })
+				}
+				
+        //------------------------one click start------------------------
+		var onceonly = 0;
+		var onceonly_merge = 0;
+		var onceonly_inter = 0;
+
+        document.getElementById("Start").onclick=function(){
+			if (onceonly == 0){
+		
+				rosvicon = spawn("bash",["rosvicon.sh"]);
+				startcorners = spawn("bash",["startcorners.sh"],{stdio: 'inherit' });
+				startvectorfield = spawn("bash",["startvectorfield.sh"],{stdio: 'inherit' });
+				runmergecontrol = spawn("bash",["runmergecontrol.sh"],{stdio: 'inherit' });
+		
+		
+				rosvicon.on("close", function(){
+					    console.log("has been ended");
+				})
+				startcorners.on("close", function(){
+					    console.log("has been ended");
+				})
+				startvectorfield.on("close", function(){
+					    console.log("has been ended");
+				})
+				runmergecontrol.on("close", function(){
+					    console.log("has been ended");
+				})
+
+
+						
+							var inter_ = document.createElement('td');
+							var merge_ = document.createElement('td');
+
+							inter_.align = "center";
+							merge_.align = "center";
+							inter_.style = "cursor:pointer";
+							merge_.style = "cursor:pointer";
+							inter_.className = "inter";
+							merge_.className = "Merge";
+							inter_.innerHTML = "Inter";
+							merge_.innerHTML = "Merge";
+							inter_.id = "inter_id";
+                            merge_.id = "merge_id";
+
+						
+							var p_node1 = document.getElementById("start_button");
+							var P_node2 = document.getElementById("merge_botton");
+							p_node1.appendChild(inter_);
+							P_node2.appendChild(merge_);
+							onceonly = 1;
+							
+							document.getElementById("merge_id").onclick=function(){
+							  if(onceonly_merge == 0){
+								runmergesim = spawn("bash",["runmergesim.sh"],{stdio: 'inherit' });
+			    				runmergesim.on("close", function(){
+			    				console.log("has been ended");
+								})
+				
+								setTimeout(function() {
+    								rosvicon.kill();
+    								startcorners.kill();
+    								startvectorfield.kill();
+    								runmergecontrol.kill();
+    								runmergesim.kill();
+    								spawn("sh",["killprocess.sh"],{stdio: 'inherit' });
+    								
+    			
+   								 }, 10000);
+								onceonly_merge = 1;
+					  
+							}
+						}
+
+							document.getElementById("inter_id").onclick=function(){
+							  if (onceonly_inter == 0){
+								runintersim = spawn("bash",["runintersim.sh"],{stdio: 'inherit' });
+			    				runintersim.on("close", function(){
+			    				console.log("has been ended");
+								})
+								
+								setTimeout(function() {
+    								rosvicon.kill();
+    								startcorners.kill();
+    								startvectorfield.kill();
+    								runmergecontrol.kill();
+    								runintersim.kill();
+    								spawn("sh",["killprocess.sh"],{stdio: 'inherit' });
+    								
+    			
+   								 }, 10000);
+    		
+								onceonly_inter = 1;
+							 }
+							}	
+
+					     }
+
+
+			 }
+			
+
+			</script>
+
+    	</div>
+
+<div id="footer">
+  <div class="container">
+    <p class="text-muted credit">More imformation <a href="http://sites.udel.edu/ids-lab/" target="_blank" title="模板之家">connected vehicles.</a>
+</div>
+</div>
+</body>
+</html>

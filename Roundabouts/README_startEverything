@@ -1,0 +1,57 @@
+
+#Use ROS version Kinetic
+#Use Vicon_Bridge from here: http://wiki.ros.org/vicon_bridge
+
+#Open a new terminal for each code block, paste below the # comments
+
+#Start WiFi connections to cars using CorobotNetwork (*also chech the internet connection for connecting to CorobotNetwork with Wire*)
+cd Desktop/project/electron
+npm start
+
+#Launch Vicon - also this starts a roscore which is needed to rosrun the other functions
+cd catkin_ws
+source devel/setup.bash
+roslaunch vicon_bridge vicon.launch
+
+#Start battery level publisher # it is not essential
+cd Desktop/project/Client
+python batt.py
+
+#Initialize the corners as static frames so blocking them will not effect the control
+cd catkin_ws
+source devel/setup.bash
+cd src/line_following/script
+python FrameInit.py
+
+#Vector field method keeps the simulated cars on the road
+cd catkin_ws
+source devel/setup.bash
+rosrun line_following lf_test
+
+#Run merge control - must re-run if you end the script and there are still cars in the merge region
+cd catkin_ws
+source devel/setup.bash
+rosrun line_following lf_merge
+
+#Run the simulator
+cd catkin_ws
+source devel/setup.bash
+cd src/line_following/script
+python mergeSim.py
+
+#Run the ref tracking on the real robots
+cd catkin_ws
+source devel/setup.bash
+cd src/line_following/script
+python refTracker.py
+
+#Paste the saved file name into dataHandler.py and then run this
+cd catkin_ws
+source devel/setup.bash
+cd src/line_following/data
+python dataHandler.py
+
+Note1: any change which is made on mapbuilder(for compiling code): 
+cd catkin_ws 
+catkin_make 
+

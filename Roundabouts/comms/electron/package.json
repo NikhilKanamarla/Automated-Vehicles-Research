@@ -1,0 +1,22 @@
+{
+  "name": "minicity_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Yue Feng",
+  "license": "ISC",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "electron-prompt": "^0.5.0",
+    "execa": "^0.10.0",
+    "python-shell": "^0.5.0",
+    "smalltalk": "^2.5.1",
+    "socket.io": "^1.7.4"
+  },
+  "devDependencies": {
+    "electron": "1.6.2"
+  }
+}
