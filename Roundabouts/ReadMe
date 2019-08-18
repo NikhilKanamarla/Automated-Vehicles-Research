@@ -59,4 +59,3 @@ Animate creates a simulation for testing the software
 ZumoThread contains the control logic from the paper 
 The threads at the bottom contain the paths for the cars 
 
-Files in folders are dependencies and have not been created or modified by me  
