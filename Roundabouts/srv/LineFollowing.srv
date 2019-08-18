@@ -1,7 +1,0 @@
-int32 id
-float64 x
-float64 y
----
-int32 res
-float64 dx
-float64 dy

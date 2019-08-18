@@ -1,1 +1,0 @@
-./kill.sh refTracker.py
