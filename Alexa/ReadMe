@@ -1,41 +1,17 @@
 Nikhil Kanamarla
 
-First Sprint 
-Learn UDSSC Smart City Code, ROS and Vicon system 
-Learn Flask-Ask and Alexa developer Platform documentation
+
+Uses UDSSC Smart City Code, ROS and Vicon system 
+Uses Flask-Ask and Alexa developer Platform documentation
 Design a voice user interface (triggers (voice commands), intents (possible user requests), slots (handle’s user request)
 JSON schema to define interaction model of triggers, sample utterances and slots for the Alexa custom skill 
 Open source Ngrok tunnel to localhost over a port 5000. A local Skill Server to connect to HTTPS endpoint for Amazon Alexa developer console.  
 
-Second Sprint 
-Integrate the Amazon Echo into the UD Smart City Autonomous cars and Autonomous Drones (if possible) through mainframe Linux Computer 
+Integrate the Amazon Echo into the UD Smart City Autonomous cars through mainframe Linux Computer 
 Overall: get car to drive to a location via Alexa skill
 
 
 
-Optional 
-Assign each smart city shop or building a segment or arc 
-Create an algorithm generate paths for the cars within vector fields
-Actions cars 
-Car designs a path to any place on the map 
-Cars move in a group through intersections and merging 
-Car follows another car through the city 
-Actions drones
-Drone hovers over the building 
-Drone lands on a building 
-Drone operates in swarms 
-Drone lands on a moving car
-Natural language processing for continued conversation. 
-Beta Test Skill using Alexa app with small group of people in the lab
-
-Final Dialogue system
-“Alexa, open UD Smart City”
-Fires initial terminal commands 
-“Alexa, send car 4 to the Paris Coffee and Cake Shop” (car action)
-“Alexa send drone 3 to land there as well” (Drone action) 
-
-Machine Learning
-Planned Libraries : NLTK, TensorFlow, Numpy, Gensim for NLP.
 
 
 
