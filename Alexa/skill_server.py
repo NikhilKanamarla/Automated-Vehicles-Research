@@ -34,7 +34,6 @@ def launch():
 #code used when command for cars is given
 @ask.intent('carIntent')
 def carIntent(coffeeShop):
-    #nkMergeSim.watchout()
     #launches external file
     os.system('python /home/themainframe/catkin_ws/src/line_following/script/nkMergeSim.py')
     pub.publish(coffeeShop)
