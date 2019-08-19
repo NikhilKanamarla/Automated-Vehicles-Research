@@ -6,9 +6,11 @@ Uses Flask-Ask and Alexa developer Platform documentation
 Design a voice user interface (triggers (voice commands), intents (possible user requests), slots (handle’s user request)
 JSON schema to define interaction model of triggers, sample utterances and slots for the Alexa custom skill 
 Open source Ngrok tunnel to localhost over a port 5000. A local Skill Server to connect to HTTPS endpoint for Amazon Alexa developer console.  
+Integrated the Amazon Echo into the UD Smart City Autonomous cars through mainframe Linux Computer 
 
-Integrate the Amazon Echo into the UD Smart City Autonomous cars through mainframe Linux Computer 
-Overall: get car to drive to a location via Alexa skill
+Overall: Use voice commands get car to drive to a location via Alexa skill running on Amazon echo
+
+
 
 
 
