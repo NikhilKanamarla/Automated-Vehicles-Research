@@ -1,0 +1,93 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "smart city",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "carIntent",
+                    "slots": [
+                        {
+                            "name": "coffeeShop",
+                            "type": "AMAZON.Food",
+                            "samples": [
+                                "run the cars"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "run the cars",
+                        "say {coffeeShop}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "carIntent",
+                    "confirmationRequired": true,
+                    "prompts": {
+                        "confirmation": "Confirm.Intent.680776539766"
+                    },
+                    "slots": [
+                        {
+                            "name": "coffeeShop",
+                            "type": "AMAZON.Food",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1433267023109.40670936270"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.1433267023109.40670936270",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "what do you want to do?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.427272116236.659420533766",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "are you sure?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.680776539766",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "are you sure?"
+                    }
+                ]
+            }
+        ]
+    }
+}
