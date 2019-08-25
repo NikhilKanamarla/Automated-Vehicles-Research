@@ -1,3 +1,5 @@
+Experimental validation of "Optimal Control of Connected and Automated Vehicles at Roundabouts: An Investigation in a Mixed Traffic Environment" paper by LuiHui Zhao of UD IDS lab 
+
 Main files include: MergeBuilder.cpp, LF_Merge.cpp,Path.py, DynamicMerging.py, BaselineMerging.py
 
 Path.py file 
